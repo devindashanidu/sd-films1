@@ -134,38 +134,26 @@
     .no-comments { color: #999; font-style: italic; text-align:center; }
     a.back-link { display:inline-block; margin-bottom:20px; text-decoration: none; color: var(--primary, #8A2BE2); font-size: 16px;}
     a.back-link:hover { text-decoration: underline; }
-    /* Details Page */
-    #page-details { display: none; }
-    .details-container { max-width: 700px; background: #fff; margin: 35px auto 30px; border-radius: 16px; box-shadow: 0 10px 32px rgba(44,44,84,0.09); padding: 24px 18px 22px 18px; }
-    .details-poster { width: 100%; max-width: 350px; border-radius: 12px; margin: 0 auto 24px; display: block; }
-    .details-title { font-family: 'Montserrat', Arial, sans-serif; font-size: 32px; font-weight: 900; margin-bottom: 8px; }
-    .details-meta { color: #666; font-size: 15px; margin-bottom: 14px; }
-    .details-description { margin-bottom: 18px; }
-    .details-btns { display: flex; gap: 12px; margin-top: 18px;}
-    .details-btn { flex: 1; background: var(--gradient); color: #fff; border: none; border-radius: 7px; padding: 12px 0; font-size: 15px; font-weight: 700; text-align: center; text-decoration: none; transition: all 0.23s;}
-    .details-btn:hover { background: var(--primary);}
-    .details-btn.subtitle { background: var(--accent); color: #fff;}
-    .details-btn.subtitle:hover { background: #3db8b0;}
     /* --- Mobile Responsive --- */
     @media (max-width: 992px) { .logo h1, .header-title { font-size: 38px; } }
     @media (max-width: 768px) {
-      .container, .container2, .details-container { padding: 12px; }
+      .container, .container2 { padding: 12px; }
       .logo h1, .header-title { font-size: 28px; }
       .hero h2 { font-size: 24px; }
       .section-title h2 { font-size: 22px; }
       nav ul { gap: 10px; }
-      .btn, .download-btn, .download-btn2, .details-btn { font-size: 16px; padding: 12px 20px; }
+      .btn, .download-btn, .download-btn2 { font-size: 16px; padding: 12px 20px; }
       .search-box input { font-size: 16px; }
-      .movie-poster, .movie-poster2, .details-poster { height: 180px; max-width: 95vw;}
+      .movie-poster, .movie-poster2 { height: 180px; }
       .movies-grid, .movies-grid2 { grid-template-columns: 1fr; gap: 18px;}
       .container2 { min-width: 95vw; }
     }
     @media (max-width: 480px) {
       .logo { flex-direction: column; text-align: center; gap: 7px; }
       .logo h1, .header-title { font-size: 16px; letter-spacing:2px; }
-      .btn, .download-btn, .download-btn2, .details-btn { font-size: 13px; padding: 11px 9px; }
+      .btn, .download-btn, .download-btn2 { font-size: 13px; padding: 11px 9px; }
       .movie-info h3, .movie-info2 h3 { font-size: 15px; }
-      .container2, .details-container { padding: 7px; }
+      .container2 { padding: 7px; }
       .search-box { padding: 2px 3px; }
     }
   </style>
@@ -204,22 +192,8 @@
       <div class="section-title">
         <h2>Latest Movies</h2>
       </div>
-      <div class="movies-grid">
-        <!-- Interstellar 2014 -->
-        <div class="movie-card">
-          <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SL1500_.jpg'); position:relative;">
-            <div class="movie-overlay"><a href="#" class="btn view-details-btn" data-movie="interstellar">View Details</a></div>
-          </div>
-          <div class="movie-info">
-            <h3>Interstellar</h3>
-            <div class="movie-meta"><span><i class="fas fa-calendar-alt"></i> 2014</span><span><i class="fas fa-clock"></i> 169 min</span><span><i class="fas fa-star"></i> 8.6</span></div>
-            <p>A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.</p>
-            <div class="download-options">
-              <a href="#" class="download-btn">Download Movie</a>
-              <a href="#" class="download-btn subtitle">Download Sinhala Subtitle</a>
-            </div>
-          </div>
-        </div>
+      <div class="movies-grid" id="homeMoviesGrid">
+        <!-- Movies filled by JS -->
       </div>
     </div>
   </section>
@@ -251,68 +225,7 @@
     </form>
   </div>
   <div class="movies-grid2" id="moviesGrid">
-    <!-- Interstellar 2014 -->
-    <div class="movie-card2" data-title="Interstellar">
-      <div class="movie-poster2" style="background-image: url('https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SL1500_.jpg'); position:relative;">
-      </div>
-      <div class="movie-info2">
-        <h3>Interstellar</h3>
-        <div class="movie-meta2"><span><i class="fas fa-calendar-alt"></i> 2014</span><span><i class="fas fa-clock"></i> 169 min</span><span><i class="fas fa-star"></i> 8.6</span></div>
-        <div class="movie-desc2">A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.</div>
-        <div class="download-options2">
-          <a href="#" class="download-btn2">Download Movie</a>
-          <a href="#" class="download-btn2 subtitle">Download Sinhala Subtitle</a>
-        </div>
-        <div style="margin-top:14px;">
-          <a href="#" class="btn view-details-btn" data-movie="interstellar" style="width:100%;display:block;">View Details</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer class="footer">
-    <div class="footer-content">
-      <p>SD FILMS. All rights reserved. | Designed for movie lovers</p>
-    </div>
-    <div class="copyright">
-      <p>&copy; 2023 SD FILMS.</p>
-    </div>
-  </footer>
-</div>
-<!-- Movie Details Page (Sinhala) -->
-<div id="page-details" style="display:none;">
-  <div class="header2">
-    <div class="header-title">Interstellar (2014)</div>
-    <nav>
-      <ul style="justify-content:center; list-style:none; display:flex; gap:20px; padding:0; margin:16px 0 0 0;">
-        <li><a href="#" onclick="goto('index')" style="color:#fff;">Home</a></li>
-        <li><a href="#" onclick="goto('movies')" style="color:#fff;">Movies</a></li>
-        <li><a href="#" onclick="goto('request')" style="color:#fff;">Request</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="details-container">
-    <img class="details-poster" src="https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SL1500_.jpg" alt="Interstellar (2014)">
-    <div class="details-title">Interstellar (2014)</div>
-    <div class="details-meta">
-      <i class="fas fa-calendar-alt"></i> 2014 &nbsp; 
-      <i class="fas fa-clock"></i> 169 min &nbsp; 
-      <i class="fas fa-star"></i> 8.6
-    </div>
-    <div class="details-description" style="font-size:1.08em;">
-      <b>කතාව:</b> <br>
-      අනාගතයේ, පෘථිවියේ ජීවිතය විනාශයට පත්වෙමින් පවතී. එහිදී හිටපු නාසා යාත්‍රිකයෙකු වන කූපර් සහ ඔහුගේ කණ්ඩායමක් වර්තමාන ගැටළු විසඳීමට සහ මනුෂ්‍යයාට නව ග්‍රහයක ජීවිතයක් සොයා ගැනීමට අභ්‍යවකාශ ගමනක් ආරම්භ කරයි. ඔවුන් විසින් විශ්වයේ අනෙක් පැත්තට යාත්‍රා කරමින් කාලය, ආදරය, සහ මනුෂ්‍යත්වය පිළිබඳ අනපේක්ෂිත සත්‍ය හමුවේ. <br><br>
-      <b>අධ්‍යක්ෂණය:</b> ක්‍රිස්ටෝෆර් නෝලන්<br>
-      <b>ප්‍රධාන රංගනය:</b> මැතිව් මකොනහේ, ඇන්නා හැතවේ, ජෙස්ිකා චැස්ටේන්, මයිකල් කේන්<br>
-      <b>වර්ගය:</b> විද්‍යා ප්‍රබන්ධය, කලාප, ඇඩ්වෙන්චර්<br>
-      <b>IMDb අගය:</b> 8.6/10
-    </div>
-    <div class="details-btns">
-      <a href="#" class="details-btn">චිත්‍රපටය බාගන්න</a>
-      <a href="#" class="details-btn subtitle">සිංහල උපසිරැසි බාගන්න</a>
-    </div>
-    <div style="margin-top:22px;">
-      <button class="btn" onclick="goto(previousPage)">ආපසු යන්න</button>
-    </div>
+    <!-- Movies filled by JS -->
   </div>
   <footer class="footer">
     <div class="footer-content">
@@ -354,37 +267,110 @@
   </footer>
 </div>
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // --- MOVIE DATA ---
+  const moviesData = [
+    {
+      id: 'interstellar',
+      title: 'Interstellar',
+      year: '2014',
+      runtime: '169 min',
+      rating: '8.6',
+      desc: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.',
+      poster: 'https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SL1500_.jpg',
+      movieUrl: '#',
+      subtitleUrl: '#'
+    }
+    // Add more movies here!
+  ];
+
   // SPA navigation
-  let previousPage = 'index';
-  function goto(page) {
+  window.goto = function(page) {
     document.getElementById('page-index').style.display = (page === 'index') ? '' : 'none';
     document.getElementById('page-movies').style.display = (page === 'movies') ? '' : 'none';
     document.getElementById('page-request').style.display = (page === 'request') ? '' : 'none';
-    document.getElementById('page-details').style.display = (page === 'details') ? '' : 'none';
+    document.getElementById('page-detail') && (document.getElementById('page-detail').style.display = 'none');
     window.scrollTo(0,0);
     if(page === 'movies'){setupSearch();}
     if(page === 'request'){renderComments();}
-    if(page !== 'details') previousPage = page;
   }
   goto('index');
 
+  // Render movies grid for movies page
+  function renderMoviesGrid() {
+    const grid = document.getElementById('moviesGrid');
+    if (!grid) return;
+    grid.innerHTML = moviesData.map(m => `
+      <div class="movie-card2" data-id="${m.id}">
+        <div class="movie-poster2" style="background-image: url('${m.poster}');"></div>
+        <div class="movie-info2">
+          <h3>${m.title}</h3>
+          <div class="movie-meta2"><span><i class="fas fa-calendar-alt"></i> ${m.year}</span><span><i class="fas fa-clock"></i> ${m.runtime}</span><span><i class="fas fa-star"></i> ${m.rating}</span></div>
+          <div class="movie-desc2">${m.desc}</div>
+          <div class="download-options2">
+            <a href="${m.movieUrl}" class="download-btn2">Download Movie</a>
+            <a href="${m.subtitleUrl}" class="download-btn2 subtitle">Download Subtitles</a>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    // Add click listeners
+    grid.querySelectorAll('.movie-card2').forEach(card => {
+      card.onclick = function() {
+        openMovieDetail(card.getAttribute('data-id'));
+      };
+    });
+  }
+
+  // Render movies grid for home page
+  function renderHomeMoviesGrid() {
+    const grid = document.getElementById('homeMoviesGrid');
+    if (!grid) return;
+    grid.innerHTML = moviesData.map(m => `
+      <div class="movie-card" data-id="${m.id}" style="position:relative;cursor:pointer;">
+        <div class="movie-poster" style="background-image: url('${m.poster}');">
+          <div class="movie-overlay"><a href="#" class="btn">View Details</a></div>
+        </div>
+        <div class="movie-info">
+          <h3>${m.title}</h3>
+          <div class="movie-meta"><span><i class="fas fa-calendar-alt"></i> ${m.year}</span><span><i class="fas fa-clock"></i> ${m.runtime}</span><span><i class="fas fa-star"></i> ${m.rating}</span></div>
+          <p>${m.desc}</p>
+          <div class="download-options">
+            <a href="${m.movieUrl}" class="download-btn">Download Movie</a>
+            <a href="${m.subtitleUrl}" class="download-btn subtitle">Download Subtitles</a>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    grid.querySelectorAll('.movie-card').forEach(card => {
+      card.onclick = function(e) {
+        // Only trigger on overlay or card, not download buttons
+        if(e.target.classList.contains('download-btn') || e.target.classList.contains('download-btn2')) return;
+        openMovieDetail(card.getAttribute('data-id'));
+      };
+      card.querySelector('.movie-overlay .btn').onclick = function(evt){
+        evt.preventDefault();
+        openMovieDetail(card.getAttribute('data-id'));
+      };
+    });
+  }
+
   // Movies search functionality
   function setupSearch(){
-    if(window._movies_search_ready) return;
-    window._movies_search_ready = true;
+    renderMoviesGrid();
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
-    const movieCards = document.querySelectorAll('#moviesGrid .movie-card2');
+    const grid = document.getElementById('moviesGrid');
     searchForm.addEventListener('submit', function(e) {
       e.preventDefault();
       const query = searchInput.value.trim().toLowerCase();
-      movieCards.forEach(card => {
+      grid.querySelectorAll('.movie-card2').forEach(card => {
         const title = card.querySelector('h3').textContent.toLowerCase();
         card.style.display = (title.includes(query) || query === '') ? '' : 'none';
       });
     });
     searchInput.addEventListener('input', function() {
-      if (searchInput.value === '') movieCards.forEach(card => card.style.display = '');
+      if (searchInput.value === '') grid.querySelectorAll('.movie-card2').forEach(card => card.style.display = '');
     });
   }
 
@@ -411,31 +397,132 @@
       });
     }
   }
-  document.addEventListener('DOMContentLoaded', function(){
-    // Movie view details buttons
-    document.body.addEventListener('click', function(e) {
-      if(e.target.classList.contains('view-details-btn')) {
-        e.preventDefault();
-        goto('details');
+  // Comments for request page
+  const commentForm = document.getElementById('commentForm');
+  const filmInput = document.getElementById('filmInput');
+  if(commentForm){
+    commentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const val = filmInput.value.trim();
+      if(val.length > 0) {
+        const comments = getComments();
+        comments.unshift(val);
+        saveComments(comments);
+        filmInput.value = '';
+        renderComments();
       }
     });
-    // Comment form submission
-    const commentForm = document.getElementById('commentForm');
-    const filmInput = document.getElementById('filmInput');
-    if(commentForm){
-      commentForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const val = filmInput.value.trim();
-        if(val.length > 0) {
-          const comments = getComments();
-          comments.unshift(val);
-          saveComments(comments);
-          filmInput.value = '';
-          renderComments();
-        }
-      });
+  }
+
+  // ---- Movie Detail Page Logic ----
+  window.openMovieDetail = function(movieId) {
+    let pageDetail = document.getElementById('page-detail');
+    if(!pageDetail){
+      pageDetail = document.createElement('div');
+      pageDetail.id = 'page-detail';
+      document.body.appendChild(pageDetail);
     }
-  });
+    const m = moviesData.find(m => m.id === movieId);
+    pageDetail.innerHTML = `
+      <div class="header2">
+        <div class="header-title">${m.title}</div>
+        <nav>
+          <ul style="justify-content:center; list-style:none; display:flex; gap:20px; padding:0; margin:16px 0 0 0;">
+            <li><a href="#" onclick="goto('index')" style="color:#fff;">Home</a></li>
+            <li><a href="#" onclick="goto('movies')" style="color:#fff;">Movies</a></li>
+            <li><a href="#" onclick="goto('request')" style="color:#fff;">Request</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container" style="max-width:600px;">
+        <a href="#" onclick="closeMovieDetail();return false;" class="back-link">&larr; Back to Movies</a>
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <img src="${m.poster}" alt="${m.title}" style="width:100%;max-width:340px;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.12);margin-bottom:18px;">
+          <h2 style="margin:0 0 8px 0;">${m.title}</h2>
+          <div style="color:#777;font-size:15px;margin-bottom:6px;">
+            <span><i class="fas fa-calendar-alt"></i> ${m.year}</span> &middot;
+            <span><i class="fas fa-clock"></i> ${m.runtime}</span> &middot;
+            <span><i class="fas fa-star"></i> ${m.rating}</span>
+          </div>
+          <div style="font-size:16px;margin-bottom:15px;text-align:center;color:#444;">${m.desc}</div>
+          <div style="display:flex;gap:12px;margin-bottom:23px;">
+            <a href="${m.movieUrl}" class="download-btn2" style="padding:10px 16px;">Download Movie</a>
+            <a href="${m.subtitleUrl}" class="download-btn2 subtitle" style="padding:10px 16px;">Download Subtitles</a>
+          </div>
+          <form id="detailCommentForm" style="width:100%;max-width:350px;display:flex;gap:8px;margin-bottom:13px;">
+            <input type="text" id="detailCommentInput" placeholder="Add a comment..." maxlength="100" style="flex:1;padding:10px;border-radius:7px;border:1px solid #ccc;">
+            <button type="submit" style="background:var(--gradient);color:#fff;border:none;border-radius:7px;padding:8px 15px;font-size:15px;cursor:pointer;">Comment</button>
+          </form>
+          <ul id="detailCommentsList" style="list-style:none;padding:0;width:100%;max-width:350px;text-align:left;"></ul>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer-content">
+          <p>SD FILMS. All rights reserved. | Designed for movie lovers</p>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 SD FILMS.</p>
+        </div>
+      </footer>
+    `;
+    document.getElementById('page-index').style.display = 'none';
+    document.getElementById('page-movies').style.display = 'none';
+    document.getElementById('page-request').style.display = 'none';
+    pageDetail.style.display = '';
+
+    // Comment logic for detail
+    function getDetailComments() {
+      return JSON.parse(localStorage.getItem('movieComments_' + movieId) || "[]");
+    }
+    function saveDetailComments(comments) {
+      localStorage.setItem('movieComments_' + movieId, JSON.stringify(comments));
+    }
+    function renderDetailComments() {
+      const comments = getDetailComments();
+      const list = document.getElementById('detailCommentsList');
+      list.innerHTML = '';
+      if(comments.length === 0){
+        list.innerHTML = '<li style="color:#aaa;font-style:italic;">No comments yet.</li>';
+      } else {
+        comments.forEach(c => {
+          const li = document.createElement('li');
+          li.textContent = c;
+          li.style.background = '#f3f0fa';
+          li.style.borderRadius = '6px';
+          li.style.padding = '8px 11px';
+          li.style.marginBottom = '7px';
+          li.style.fontSize = '15px';
+          list.appendChild(li);
+        });
+      }
+    }
+    setTimeout(() => {
+      const form = document.getElementById('detailCommentForm');
+      const input = document.getElementById('detailCommentInput');
+      if(form){
+        form.onsubmit = function(e){
+          e.preventDefault();
+          const val = input.value.trim();
+          if(val.length > 0){
+            const comments = getDetailComments();
+            comments.unshift(val);
+            saveDetailComments(comments);
+            input.value = '';
+            renderDetailComments();
+          }
+        };
+      }
+      renderDetailComments();
+    }, 50);
+  }
+  window.closeMovieDetail = function() {
+    document.getElementById('page-detail').style.display = 'none';
+    goto('movies');
+  }
+
+  // Initial render
+  renderHomeMoviesGrid();
+});
 </script>
 </body>
 </html>
