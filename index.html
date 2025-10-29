@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Interstellar - SD FILMS</title>
+  <title>SD FILMS - Download Movies</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Same CSS as index.html */
     html, body { width:100%; min-height:100%; margin:0; padding:0; overflow-x: hidden; }
     :root {
       --primary: #8A2BE2;
@@ -19,13 +18,97 @@
     }
     * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
-    .header2 { background: linear-gradient(135deg, #8A2BE2, #FF6B9D); color: #fff; padding: 32px 0 10px; text-align: center;}
-    .header-title { font-family: 'Montserrat', Arial, sans-serif; font-size: 54px; font-weight: 900; letter-spacing: 6px; text-transform: uppercase; background: linear-gradient(90deg, #fff 40%, #FFD700 70%, #ff97d2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    header { background: var(--gradient); color: white; padding: 20px 0; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);}
+    .header-content { position: relative; z-index: 2;}
+    .header-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
     .container { width: 92%; max-width: 1200px; margin: 0 auto; padding: 20px;}
-    .download-btn2 { flex: 1; text-align: center; padding: 9px; background: var(--gradient); color: white; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s;}
-    .download-btn2:hover { background: var(--primary); transform: translateY(-2px);}
-    .download-btn2.subtitle { background: var(--accent);}
-    .download-btn2.subtitle:hover { background: #3db8b0;}
+    .logo { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+    .logo h1 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 80px;
+      letter-spacing: 6px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.19);
+      line-height: 1;
+      background: linear-gradient(90deg, #fff 40%, #FFD700 70%, #ff97d2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      word-break: break-word;
+    }
+    .logo-icon { font-size: 48px; color: #FFD700; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3)); }
+    .tagline { font-size: 18px; font-weight: 300; margin-bottom: 20px; max-width: 600px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);}
+    nav ul { display: flex; flex-wrap: wrap; list-style: none; gap: 25px; padding: 0; margin: 0;}
+    nav ul li { flex: 0 0 auto; }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 10px 18px;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 18px;
+    }
+    nav ul li a:active, nav ul li a:focus, nav ul li a:hover { background-color: rgba(255,255,255,0.18); transform: translateY(-1px);}
+    .hero {
+      background: linear-gradient(rgba(44,44,84,0.8), rgba(44,44,84,0.9)), url('https://images.unsplash.com/photo-1489599809505-f2d4c3f70800?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 70px 0 60px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hero h2 { font-size: 42px; margin-bottom: 20px; font-weight: 700; }
+    .hero p { font-size: 20px; max-width: 700px; margin: 0 auto 30px; font-weight: 300; }
+    .btn {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      padding: 16px 38px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.19);
+      margin-top: 10px;
+    }
+    .btn:active, .btn:focus, .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.23);}
+    .movies-section { margin-bottom: 60px;}
+    .section-title { text-align: center; margin-bottom: 40px; position: relative;}
+    .section-title h2 { font-size: 36px; color: var(--dark); display: inline-block; padding-bottom: 10px;}
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background: var(--gradient);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .movies-grid, .movies-grid2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 30px;}
+    .movie-card, .movie-card2 { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: all 0.3s; display: flex; flex-direction: column;}
+    .movie-card:hover, .movie-card2:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15);}
+    .movie-poster, .movie-poster2 { height: 340px; background-size: cover; background-position: center; width: 100%;}
+    .movie-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s;}
+    .movie-card:hover .movie-overlay { opacity: 1; }
+    .movie-info, .movie-info2 { padding: 18px; flex: 1; display: flex; flex-direction: column;}
+    .movie-info h3, .movie-info2 h3 { font-size: 20px; margin-bottom: 10px; color: #2C2C54;}
+    .movie-meta, .movie-meta2 { display: flex; justify-content: space-between; margin-bottom: 11px; font-size: 14px; color: #777;}
+    .movie-desc2, .movie-info p { font-size: 15px; margin-bottom: 12px; color: #444;}
+    .download-options, .download-options2 { display: flex; gap: 10px; margin-top: auto;}
+    .download-btn, .download-btn2 { flex: 1; text-align: center; padding: 9px; background: var(--gradient); color: white; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s;}
+    .download-btn:hover, .download-btn2:hover { background: var(--primary); transform: translateY(-2px);}
+    .download-btn.subtitle, .download-btn2.subtitle { background: var(--accent);}
+    .download-btn.subtitle:hover, .download-btn2.subtitle:hover { background: #3db8b0;}
     .sinhala-note {
       margin-top: 10px;
       padding: 8px 12px;
@@ -39,45 +122,149 @@
     .footer { background-color: var(--dark); color: white; padding: 30px 0 10px; margin-top: 40px;}
     .footer-content { text-align: center;}
     .copyright { text-align: center; padding-top: 15px; font-size: 14px; color: #aaa;}
+    /* Movies page and Request page styling (shared for all) */
+    .header2 { background: linear-gradient(135deg, #8A2BE2, #FF6B9D); color: #fff; padding: 32px 0 10px; text-align: center;}
+    .header-title { font-family: 'Montserrat', Arial, sans-serif; font-size: 54px; font-weight: 900; letter-spacing: 6px; text-transform: uppercase; background: linear-gradient(90deg, #fff 40%, #FFD700 70%, #ff97d2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    .tagline2 { font-size: 20px; color: #fff; margin-bottom: 12px; }
+    .search-container { display: flex; justify-content: center; margin: 32px 0 20px 0;}
+    .search-box { width: 100%; max-width: 460px; display: flex; align-items: center; background: #fff; border-radius: 40px; box-shadow: 0 2px 12px rgba(138,43,226,0.08); padding: 6px 12px; border: 2px solid #eee;}
+    .search-box input { flex: 1; border: none; outline: none; background: transparent; font-size: 18px; padding: 10px 14px;}
+    .search-box button { background: linear-gradient(135deg, #8A2BE2, #FF6B9D); border: none; color: #fff; border-radius: 50%; width: 40px; height: 40px; font-size: 18px; cursor: pointer; transition: background 0.2s; margin-left: 6px;}
+    .search-box button:hover { background: #6c1bb0;}
+    /* Request Page */
+    .container2 { width: 97%; max-width: 600px; margin: 28px auto 0 auto; background: #fff; border-radius: 14px; box-shadow: 0 10px 32px rgba(44,44,84,0.09); padding: 22px 10px 18px 10px;}
+    .form-title { font-size: 22px; font-weight: 700; margin-bottom: 18px; text-align:center;}
+    form { display: flex; gap: 10px; align-items: center; margin-bottom: 25px;}
+    input[type="text"] { flex: 1; padding: 13px 12px; border-radius: 8px; border: 1.5px solid #DDD; font-size: 17px; }
+    button[type="submit"] { background: linear-gradient(135deg, #8A2BE2, #FF6B9D); color: #fff; border: none; border-radius: 8px; padding: 11px 18px; font-size: 17px; font-weight: 600; cursor: pointer; transition: background 0.2s;}
+    button[type="submit"]:hover { background: #6c1bb0;}
+    .comments-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .comments-list { list-style: none; padding: 0;}
+    .comments-list li { background: #f3f0fa; margin-bottom: 8px; border-radius: 6px; padding: 10px 14px; font-size: 16px; }
+    .no-comments { color: #999; font-style: italic; text-align:center; }
     a.back-link { display:inline-block; margin-bottom:20px; text-decoration: none; color: var(--primary, #8A2BE2); font-size: 16px;}
     a.back-link:hover { text-decoration: underline; }
-    /* Mobile responsive styles... */
+    /* --- Mobile Responsive --- */
+    @media (max-width: 992px) { .logo h1, .header-title { font-size: 38px; } }
+    @media (max-width: 768px) {
+      .container, .container2 { padding: 12px; }
+      .logo h1, .header-title { font-size: 28px; }
+      .hero h2 { font-size: 24px; }
+      .section-title h2 { font-size: 22px; }
+      nav ul { gap: 10px; }
+      .btn, .download-btn, .download-btn2 { font-size: 16px; padding: 12px 20px; }
+      .search-box input { font-size: 16px; }
+      .movie-poster, .movie-poster2 { height: 180px; }
+      .movies-grid, .movies-grid2 { grid-template-columns: 1fr; gap: 18px;}
+      .container2 { min-width: 95vw; }
+    }
+    @media (max-width: 480px) {
+      .logo { flex-direction: column; text-align: center; gap: 7px; }
+      .logo h1, .header-title { font-size: 16px; letter-spacing:2px; }
+      .btn, .download-btn, .download-btn2 { font-size: 13px; padding: 11px 9px; }
+      .movie-info h3, .movie-info2 h3 { font-size: 15px; }
+      .container2 { padding: 7px; }
+      .search-box { padding: 2px 3px; }
+    }
   </style>
 </head>
 <body>
-<div class="header2">
-  <div class="header-title">SD FILMS</div>
-  <div class="tagline2">Interstellar - Movie Details</div>
-  <nav>
-    <ul style="justify-content:center; list-style:none; display:flex; gap:20px; padding:0; margin:16px 0 0 0;">
-      <li><a href="index.html" style="color:#fff;">Home</a></li>
-      <li><a href="movies.html" style="color:#fff;">Movies</a></li>
-      <li><a href="request.html" style="color:#fff;">Request</a></li>
-    </ul>
-  </nav>
-</div>
-<div class="container" style="max-width:600px;">
-  <a href="movies.html" class="back-link">&larr; Back to Movies</a>
-  <div style="display:flex;flex-direction:column;align-items:center;">
-    <img src="https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SL1500_.jpg" alt="Interstellar" style="width:100%;max-width:340px;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.12);margin-bottom:18px;">
-    <h2 style="margin:0 0 8px 0;">Interstellar</h2>
-    <div style="color:#777;font-size:15px;margin-bottom:6px;">
-      <span><i class="fas fa-calendar-alt"></i> 2014</span> &middot;
-      <span><i class="fas fa-clock"></i> 169 min</span> &middot;
-      <span><i class="fas fa-star"></i> 8.6</span>
+<!-- Home Page -->
+<header>
+  <div class="header-bg"></div>
+  <div class="container header-content">
+    <div class="logo">
+      <div class="logo-icon">
+        <i class="fas fa-film"></i>
+      </div>
+      <h1>SD FILMS</h1>
     </div>
-    <div style="font-size:16px;margin-bottom:15px;text-align:center;color:#444;">
-      A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.
+    <p class="tagline">Your premier destination for quality movie downloads with subtitles</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="request.html">Request</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section class="hero" id="home">
+  <div class="container">
+    <h2>Download High Quality Movies</h2>
+    <p>Explore our collection of films with multiple quality options and subtitle downloads. All content is carefully curated by SD FILMS.</p>
+    <a href="movies.html" class="btn">Browse Movies</a>
+  </div>
+</section>
+<section class="movies-section" id="movies">
+  <div class="container">
+    <div class="section-title">
+      <h2>Latest Movies</h2>
     </div>
-    <div style="display:flex;gap:12px;margin-bottom:23px;">
-      <a href="https://t.me/sdfilms1/3" target="_blank" class="download-btn2" style="padding:10px 16px;">Download on Telegram</a>
-      <a href="https://piratelk.com/interstellar-2014-sinhala-subtitles/" target="_blank" class="download-btn2 subtitle" style="padding:10px 16px;">Download Subtitles</a>
-    </div>
-    <div class="sinhala-note">
-      අප තවමත් සිංහල උපසිරැසි නිර්මාණය නොකරන නිසා සිංහල උපසිරැසි නිකුත් කරන වෙනත් වෙබ් අඩවියක් වෙත ඔබව ප්‍රවේශ කරනු ඇත.
+    <div class="movies-grid">
+      <!-- Movie Cards -->
+      <div class="movie-card">
+        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SL1500_.jpg');">
+          <div class="movie-overlay"><a href="interstellar.html" class="btn">View Details</a></div>
+        </div>
+        <div class="movie-info">
+          <h3>Interstellar</h3>
+          <div class="movie-meta"><span><i class="fas fa-calendar-alt"></i> 2014</span><span><i class="fas fa-clock"></i> 169 min</span><span><i class="fas fa-star"></i> 8.6</span></div>
+          <p>A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.</p>
+          <div class="download-options">
+            <a href="https://t.me/sdfilms1/3" target="_blank" class="download-btn">Download on Telegram</a>
+            <a href="https://piratelk.com/interstellar-2014-sinhala-subtitles/" target="_blank" class="download-btn subtitle">Download Subtitles</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/I/91jBdaRVTPL._AC_SL1500_.jpg');">
+          <div class="movie-overlay"><a href="dune.html" class="btn">View Details</a></div>
+        </div>
+        <div class="movie-info">
+          <h3>Dune</h3>
+          <div class="movie-meta"><span><i class="fas fa-calendar-alt"></i> 2021</span><span><i class="fas fa-clock"></i> 155 min</span><span><i class="fas fa-star"></i> 8.0</span></div>
+          <p>Feature adaptation of Frank Herbert's science fiction novel about the son of a noble family.</p>
+          <div class="download-options">
+            <a href="https://archive.org/download/dune-2021/Dune.2021.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4" target="_blank" class="download-btn">Download Movie</a>
+            <a href="https://www.opensubtitles.org/en/search/sublanguageid-sin/idmovie-194196" target="_blank" class="download-btn subtitle">Download Subtitles</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SL1500_.jpg');">
+          <div class="movie-overlay"><a href="inception.html" class="btn">View Details</a></div>
+        </div>
+        <div class="movie-info">
+          <h3>Inception</h3>
+          <div class="movie-meta"><span><i class="fas fa-calendar-alt"></i> 2010</span><span><i class="fas fa-clock"></i> 148 min</span><span><i class="fas fa-star"></i> 8.8</span></div>
+          <p>A thief who steals corporate secrets through dream-sharing technology is given the inverse task.</p>
+          <div class="download-options">
+            <a href="https://archive.org/download/Inception_201602/Inception.2010.720p.BluRay.x264.YIFY.mp4" target="_blank" class="download-btn">Download Movie</a>
+            <a href="https://www.opensubtitles.org/en/search/sublanguageid-sin/idmovie-52967" target="_blank" class="download-btn subtitle">Download Subtitles</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <div class="movie-poster" style="background-image: url('https://m.media-amazon.com/images/I/91KkWf50SoL._AC_SL1500_.jpg');">
+          <div class="movie-overlay"><a href="dark-knight.html" class="btn">View Details</a></div>
+        </div>
+        <div class="movie-info">
+          <h3>The Dark Knight</h3>
+          <div class="movie-meta"><span><i class="fas fa-calendar-alt"></i> 2008</span><span><i class="fas fa-clock"></i> 152 min</span><span><i class="fas fa-star"></i> 9.0</span></div>
+          <p>Batman faces the Joker, a criminal mastermind who seeks to undermine Batman's influence.</p>
+          <div class="download-options">
+            <a href="https://archive.org/download/TheDarkKnight_201611/The.Dark.Knight.2008.720p.BluRay.x264.YIFY.mp4" target="_blank" class="download-btn">Download Movie</a>
+            <a href="https://www.opensubtitles.org/en/search/sublanguageid-sin/idmovie-46854" target="_blank" class="download-btn subtitle">Download Subtitles</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 <footer class="footer">
   <div class="footer-content">
     <p>SD FILMS. All rights reserved. | Designed for movie lovers</p>
