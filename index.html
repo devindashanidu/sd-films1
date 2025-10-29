@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
       rating: '8.6',
       desc: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.',
       poster: 'https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SL1500_.jpg',
-      movieUrl: '#',
+      movieUrl: 'https://archive.org/download/interstellar_201909/Interstellar.2014.720p.BluRay.x264.YIFY.mp4',
       subtitleUrl: 'https://piratelk.com/interstellar-2014-sinhala-subtitles/'
     },
     {
@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
       rating: '8.0',
       desc: 'Feature adaptation of Frank Herbert\'s science fiction novel about the son of a noble family entrusted with the protection of the most valuable asset in the galaxy.',
       poster: 'https://m.media-amazon.com/images/I/91jBdaRVTPL._AC_SL1500_.jpg',
-      movieUrl: '#',
+      movieUrl: 'https://archive.org/download/dune-2021_202110/Dune.2021.720p.WEBRip.x264.AAC-[YTS.MX].mp4',
       subtitleUrl: 'https://www.opensubtitles.org/en/search/sublanguageid-sin/idmovie-194196'
     },
     {
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
       rating: '8.8',
       desc: 'A thief who steals corporate secrets through dream-sharing technology is given the inverse task.',
       poster: 'https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SL1500_.jpg',
-      movieUrl: '#',
+      movieUrl: 'https://archive.org/download/Inception_201602/Inception.2010.720p.BluRay.x264.YIFY.mp4',
       subtitleUrl: 'https://www.opensubtitles.org/en/search/sublanguageid-sin/idmovie-52967'
     },
     {
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
       rating: '9.0',
       desc: 'Batman faces the Joker, a criminal mastermind who seeks to undermine Batman\'s influence.',
       poster: 'https://m.media-amazon.com/images/I/91KkWf50SoL._AC_SL1500_.jpg',
-      movieUrl: '#',
+      movieUrl: 'https://archive.org/download/TheDarkKnight_201611/The.Dark.Knight.2008.720p.BluRay.x264.YIFY.mp4',
       subtitleUrl: 'https://www.opensubtitles.org/en/search/sublanguageid-sin/idmovie-46854'
     },
     {
@@ -332,8 +332,41 @@ document.addEventListener('DOMContentLoaded', function() {
       rating: '8.9',
       desc: 'The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence.',
       poster: 'https://m.media-amazon.com/images/I/81UTs3sC5hL._AC_SL1500_.jpg',
-      movieUrl: '#',
+      movieUrl: 'https://archive.org/download/PulpFiction_201602/Pulp.Fiction.1994.720p.BluRay.x264.YIFY.mp4',
       subtitleUrl: 'https://www.opensubtitles.org/en/search/sublanguageid-sin/idmovie-680'
+    },
+    {
+      id: 'avatar',
+      title: 'Avatar',
+      year: '2009',
+      runtime: '162 min',
+      rating: '7.8',
+      desc: 'A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.',
+      poster: 'https://m.media-amazon.com/images/I/71f7QpHyuBL._AC_SL1500_.jpg',
+      movieUrl: 'https://archive.org/download/Avatar_201602/Avatar.2009.720p.BluRay.x264.YIFY.mp4',
+      subtitleUrl: 'https://www.opensubtitles.org/en/search/sublanguageid-sin/idmovie-55774'
+    },
+    {
+      id: 'avengers-endgame',
+      title: 'Avengers: Endgame',
+      year: '2019',
+      runtime: '181 min',
+      rating: '8.4',
+      desc: 'After the devastating events of Infinity War, the Avengers assemble once more to reverse Thanos\' actions and restore balance to the universe.',
+      poster: 'https://m.media-amazon.com/images/I/81ExhpBEbHL._AC_SL1500_.jpg',
+      movieUrl: 'https://archive.org/download/avengers-endgame-2019_202108/Avengers.Endgame.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4',
+      subtitleUrl: 'https://www.opensubtitles.org/en/search/sublanguageid-sin/idmovie-209955'
+    },
+    {
+      id: 'joker',
+      title: 'Joker',
+      year: '2019',
+      runtime: '122 min',
+      rating: '8.4',
+      desc: 'A mentally troubled stand-up comedian embarks on a downward spiral that leads to the creation of an iconic villain.',
+      poster: 'https://m.media-amazon.com/images/I/71Y9Nl6Y-VL._AC_SL1500_.jpg',
+      movieUrl: 'https://archive.org/download/joker-2019_202010/Joker.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4',
+      subtitleUrl: 'https://www.opensubtitles.org/en/search/sublanguageid-sin/idmovie-207932'
     }
   ];
 
@@ -361,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="movie-meta2"><span><i class="fas fa-calendar-alt"></i> ${m.year}</span><span><i class="fas fa-clock"></i> ${m.runtime}</span><span><i class="fas fa-star"></i> ${m.rating}</span></div>
           <div class="movie-desc2">${m.desc}</div>
           <div class="download-options2">
-            <a href="${m.movieUrl}" class="download-btn2">Download Movie</a>
+            <a href="${m.movieUrl}" target="_blank" class="download-btn2">Download Movie</a>
             <a href="${m.subtitleUrl}" target="_blank" class="download-btn2 subtitle">Download Subtitles</a>
           </div>
         </div>
@@ -389,7 +422,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="movie-meta"><span><i class="fas fa-calendar-alt"></i> ${m.year}</span><span><i class="fas fa-clock"></i> ${m.runtime}</span><span><i class="fas fa-star"></i> ${m.rating}</span></div>
           <p>${m.desc}</p>
           <div class="download-options">
-            <a href="${m.movieUrl}" class="download-btn">Download Movie</a>
+            <a href="${m.movieUrl}" target="_blank" class="download-btn">Download Movie</a>
             <a href="${m.subtitleUrl}" target="_blank" class="download-btn subtitle">Download Subtitles</a>
           </div>
         </div>
@@ -499,7 +532,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div style="font-size:16px;margin-bottom:15px;text-align:center;color:#444;">${m.desc}</div>
           <div style="display:flex;gap:12px;margin-bottom:23px;">
-            <a href="${m.movieUrl}" class="download-btn2" style="padding:10px 16px;">Download Movie</a>
+            <a href="${m.movieUrl}" target="_blank" class="download-btn2" style="padding:10px 16px;">Download Movie</a>
             <a href="${m.subtitleUrl}" target="_blank" class="download-btn2 subtitle" style="padding:10px 16px;">Download Subtitles</a>
           </div>
           <div class="sinhala-note">
