@@ -40,3 +40,84 @@
       .header-title { font-size: 28px; }
     }
     @media (max-width: 480px) {
+      .header-title { font-size: 16px; letter-spacing:2px; }
+      .container2 { padding: 7px; }
+    }
+  </style>
+</head>
+<body>
+<div class="header2">
+  <div class="header-title">SD FILMS</div>
+  <div class="tagline2">Request a Movie</div>
+  <nav>
+    <ul style="justify-content:center; list-style:none; display:flex; gap:20px; padding:0; margin:16px 0 0 0;">
+      <li><a href="index.html" style="color:#fff;">Home</a></li>
+      <li><a href="movies.html" style="color:#fff;">Movies</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="container2">
+  <div class="form-title">Comment the Film Name you want added!</div>
+  <form id="commentForm" autocomplete="off">
+    <input type="text" id="filmInput" placeholder="Enter film name..." required maxlength="100" />
+    <button type="submit">Comment</button>
+  </form>
+  <div class="comments-title">Requested Films:</div>
+  <ul class="comments-list" id="commentsList"></ul>
+  <div id="noComments" class="no-comments">No requests yet.</div>
+</div>
+<footer class="footer">
+  <div class="footer-content">
+    <p>SD FILMS. All rights reserved. | Designed for movie lovers</p>
+  </div>
+  <div class="copyright">
+    <p>&copy; 2023 SD FILMS.</p>
+  </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function getComments() {
+    return JSON.parse(localStorage.getItem('filmRequests') || "[]");
+  }
+  
+  function saveComments(comments) {
+    localStorage.setItem('filmRequests', JSON.stringify(comments));
+  }
+  
+  function renderComments() {
+    const comments = getComments();
+    const commentsList = document.getElementById('commentsList');
+    const noComments = document.getElementById('noComments');
+    commentsList.innerHTML = '';
+    if (comments.length === 0) {
+      noComments.style.display = 'block';
+    } else {
+      noComments.style.display = 'none';
+      comments.forEach(c => {
+        const li = document.createElement('li');
+        li.textContent = c;
+        commentsList.appendChild(li);
+      });
+    }
+  }
+  
+  const commentForm = document.getElementById('commentForm');
+  const filmInput = document.getElementById('filmInput');
+  
+  commentForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const val = filmInput.value.trim();
+    if(val.length > 0) {
+      const comments = getComments();
+      comments.unshift(val);
+      saveComments(comments);
+      filmInput.value = '';
+      renderComments();
+    }
+  });
+  
+  renderComments();
+});
+</script>
+</body>
+</html>
